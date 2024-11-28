@@ -1,0 +1,19 @@
+{
+  "metadata": {
+    "language": "en-US",
+    "transactionId": "1665512442670:f8e26fead13303423c14b3700780dbff",
+    "version": "1",
+    "latitude": 33.74,
+    "longitude": -84.39,
+    "expireTimeGmt": 1665512898,
+    "statusCode": 200
+  },
+  "drivingDifficultyIndexCurrent": {
+    "obsTime": 1665512298,
+    "obsTimeLocal": "2022-10-11T14:18:18-0400",
+    "dow": "Tuesday",
+    "dayInd": "D",
+    "drivingDifficultyIndex": 6,
+    "drivingDifficultyCategory": "Icy"
+  }
+}

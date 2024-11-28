@@ -1,0 +1,28 @@
+{
+"metadata": {
+"language": "en-US",
+"transaction_id": "1662652768185:385b8153f9361a9fa4fea270d929952a",
+"version": "1",
+"latitude": 42.3,
+"longitude": -71.0,
+"units": "e",
+"expire_time_gmt": 1662653020,
+"status_code": 200
+},
+"forecast": {
+"class": "fod_short_range_wwir",
+"expire_time_gmt": 1662653020,
+"fcst_valid": 1662652800,
+"fcst_valid_local": "2022-09-08T12:00:00-0400",
+"overall_type": 2,
+"phrase": "Snow likely to continue for the next several hours.",
+"terse_phrase": "Snow likely for the next several hours.",
+"phrase_template": "Snow likely to continue for the next several hours.",
+"terse_phrase_template": "Snow likely for the next several hours.",
+"precip_day": null,
+"precip_time_24hr": null,
+"precip_time_12hr": null,
+"precip_time_iso": null,
+"time_zone_abbrv": "EDT"
+}
+}

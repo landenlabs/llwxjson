@@ -1,0 +1,1 @@
+g++ -std=c++11 -o llwxjson llwxjson.cpp json.cpp
