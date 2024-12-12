@@ -27,7 +27,7 @@
 /* Begin PBXFileReference section */
 		9A7A0A872C1CC2AD00D3FF0F /* json.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = json.cpp; sourceTree = "<group>"; };
 		9A7A0A892C1DCA0700D3FF0F /* wxupdate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = wxupdate.cpp; sourceTree = "<group>"; };
-		B9777EC623A974600070DFCD /* json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		B9777EC623A974600070DFCD /* json.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = json.hpp; sourceTree = "<group>"; };
 		B9B44DBD1D8F65CD00782398 /* llwxjson */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = llwxjson; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B44DCE1D8F661700782398 /* llwxjson.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = llwxjson.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +64,7 @@
 			children = (
 				B9B44DCE1D8F661700782398 /* llwxjson.cpp */,
 				9A7A0A892C1DCA0700D3FF0F /* wxupdate.cpp */,
-				B9777EC623A974600070DFCD /* json.h */,
+				B9777EC623A974600070DFCD /* json.hpp */,
 				9A7A0A872C1CC2AD00D3FF0F /* json.cpp */,
 			);
 			path = llwxjson;

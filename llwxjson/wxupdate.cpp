@@ -281,18 +281,17 @@ static const char* defaultIf(const char* value, const char* defValue) {
 }
 
 static void dumpTm(const Tm_t& time) {
-    cout
-            << "\n   Year=" << time.tm_year
-                << "\nYearDay=" << time.tm_yday
-                << "\n  Month=" << time.tm_mon
-                << "\n    Day=" << time.tm_mday
-                << "\n    DOW=" << time.tm_mday
-                << "\n  Hours=" << time.tm_hour
-                << "\nMinutes=" << time.tm_min
-                << "\nSeconds=" << time.tm_sec
-                << "\nGMT off=" << time.tm_gmtoff << ", " << setprecision(2) << (float)time.tm_gmtoff / SECS_PER_HOUR << "hr"
-                << "\n     TZ=" << time.tm_zone
-                << endl;
+    cout << "\n   Year=" << time.tm_year
+        << "\nYearDay=" << time.tm_yday
+        << "\n  Month=" << time.tm_mon
+        << "\n    Day=" << time.tm_mday
+        << "\n    DOW=" << time.tm_mday
+        << "\n  Hours=" << time.tm_hour
+        << "\nMinutes=" << time.tm_min
+        << "\nSeconds=" << time.tm_sec
+        << "\nGMT off=" << time.tm_gmtoff << ", " << setprecision(2) << (float)time.tm_gmtoff / SECS_PER_HOUR << "hr"
+        << "\n     TZ=" << time.tm_zone
+        << endl;
 
     // int    tm_isdst;    /* Daylight Savings Time flag */
 }
