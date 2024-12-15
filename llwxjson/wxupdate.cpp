@@ -18,7 +18,7 @@
 #include <locale.h>
 #include <time.h>
 #include <cstdlib>
-#include <strings.h>
+#include <string>
 
 typedef time_t Epoch_t;
 typedef struct tm Tm_t;

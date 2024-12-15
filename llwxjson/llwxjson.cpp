@@ -9,10 +9,21 @@
 // #pragma warning( disable : 4291 )
 // #define _CRT_SECURE_NO_WARNINGS
 
+#if defined(_WIN32) || defined(_WIN64)
+#define HAVE_WIN
+#define NOMINMAX
+#define _CRT_SECURE_NO_WARNINGS   // define before all includes
+#else
+#include <unistd.h>
+#endif
+
 #include <iostream>
 #include <fstream>
 #include <sys/stat.h>
-#include <unistd.h>
+
+
+
+
 
 // Project files
 #include "json.hpp"
