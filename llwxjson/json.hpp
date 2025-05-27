@@ -9,6 +9,24 @@
 #ifndef json_h
 #define json_h
 
+#if defined(_WIN32) || defined(_WIN64)
+#define HAVE_WIN
+#define NOMINMAX
+#define _CRT_SECURE_NO_WARNINGS   // define before all includes
+
+#define strcasecmp _strcmpi
+#define strncasecmp _strnicmp
+
+// TODO - implement case insenstive strstr
+#define strcasestr strstr
+
+#define gmtime_r(__time, __tm)  gmtime_s(__tm, __time)
+#define bzero(addr, size)       memset(addr, size, 0)
+
+#include <direct.h>  
+#define getcwd _getcwd
+#endif
+
 #include <vector>
 #include <map>
 #include <set>

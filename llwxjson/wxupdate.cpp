@@ -105,11 +105,22 @@ static Tm_t& toGmtTm(const Epoch_t epoch) {
     return TM;
 }
 static Epoch_t toEpoch(Tm_t& time) {
+#ifdef HAVE_WIN
+    // https://stackoverflow.com/questions/13804095/get-the-time-zone-gmt-offset-in-c
+    const std::time_t epoch_plus_11h = 60 * 60 * 11;
+    const int local_time = localtime(&epoch_plus_11h)->tm_hour;
+    const int gm_time = gmtime(&epoch_plus_11h)->tm_hour;
+    const int tm_gmtoff = local_time - gm_time;
+
+    time.tm_sec -= tm_gmtoff;
+    return _mkgmtime(&time);
+#else
     // return mktime(&time);           // Assumes local timezone, same as timelocal
     time.tm_sec -= time.tm_gmtoff;
     time.tm_gmtoff = 0;
     return timegm(&time);            // Assumes GMT (ignores gmt offset)
     // return timelocal(&time);            // Support gmt offset
+#endif
 }
 static Epoch_t toEpochDay(const Tm_t& day, Epoch_t epochHHMMSS) {
     Tm_t tm = toGmtTm(epochHHMMSS);    // hour, minute, seconds, etc
@@ -168,9 +179,13 @@ static Epoch_t parseISO8601(const string& value, Tm_t& time) {
             gmtOffsetMins = gmtOffsetHours % 100;
             gmtOffsetHours /= 100;
         }
+#ifdef HAVE_WIN
+        time.tm_sec += gmtOffsetHours * SECS_PER_HOUR + gmtOffsetMins * SECS_PER_MIN;
+#else
         time.tm_gmtoff = gmtOffsetHours * SECS_PER_HOUR + gmtOffsetMins * SECS_PER_MIN;
         time.tm_isdst = 0;
         return toEpoch(time);
+#endif
     }
     return 0;
 }
@@ -289,8 +304,11 @@ static void dumpTm(const Tm_t& time) {
         << "\n  Hours=" << time.tm_hour
         << "\nMinutes=" << time.tm_min
         << "\nSeconds=" << time.tm_sec
+#ifdef HAVE_WIN
+#else
         << "\nGMT off=" << time.tm_gmtoff << ", " << setprecision(2) << (float)time.tm_gmtoff / SECS_PER_HOUR << "hr"
         << "\n     TZ=" << time.tm_zone
+#endif
         << endl;
 
     // int    tm_isdst;    /* Daylight Savings Time flag */
