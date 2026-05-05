@@ -16,6 +16,7 @@
 #else
 #include <unistd.h>
 #endif
+#define VERSION "v6.05.04"
 
 #include <iostream>
 #include <fstream>
@@ -103,7 +104,7 @@ int main(int argc, char* argv[]) {
         }
 
         if (cgiCmdStr == nullptr || strlen(cgiCmdStr) == 0) {
-            cerr << "\n" << argv[0] << "  Dennis Lang v1.2 " __DATE__ << "\n"
+            cerr << "\n" << argv[0] << "  Dennis Lang " VERSION " " __DATE__ << "\n"
                 << "\nDes: Make weather times relative to now\n"
                     "Use: llwxjson [options] file\n"
                     "\n"
