@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------------------------------------
 //  json.cpp      Created by dennis.lang on 24-Jun-2024
-//  Copyright © 2024 Dennis Lang. All rights reserved.
+//  Copyright © 2026 Dennis Lang. All rights reserved.
 //-------------------------------------------------------------------------------------------------
 // This file is part of llwxjson project.
 //
